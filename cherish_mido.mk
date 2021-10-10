@@ -22,17 +22,18 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/mido/device.mk)
 
 # Inherit some common Derpfest stuff.
-$(call inherit-product, vendor/derp/config/common_full_phone.mk)
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
 
 # Boot Animation Res
 TARGET_BOOT_ANIMATION_RES := 1080
 
-# Official-ify
-DERP_BUILDTYPE := Official
+PRODUCT_GENERIC_PROPERTIES += \
+    ro.cherish.maintainer=hungphan2001
+CHERISH_BUILD_TYPE :=OFFICIAL
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := mido
-PRODUCT_NAME := derp_mido
+PRODUCT_NAME := cherish_mido
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 4
 PRODUCT_MANUFACTURER := Xiaomi
